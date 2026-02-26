@@ -4,11 +4,28 @@
         <title>Name Form</title>
     </head>
     <body>
+         <form onsubmit="return validateName()"></form>
         <form> 
          <label>Name </label> <br>
-        <input type ="text" name="username"><br>
+        <input type ="text" name="username" id="username"><br>
         <input type="submit" value="submit">
         </form>
+        <script>    
+            function checkName()
+            {
+                let name = document.getElementById("username");
+                if (name=="")
+            {
+                console.log("Name Cannot be Empty")
+            }
+            let pattern = /^[A-Za-z]+\s+[A-Za-z]+$/;
+            if(pattern.text(name))
+            {
+                console.log("Enter at least two words")
+            }
+            console.log("Name is Valid :"+name);
+            }
+        </script>
        
     </body>
 </html>
