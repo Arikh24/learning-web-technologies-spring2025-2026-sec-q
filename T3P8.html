@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>JS LAb Task 3 Paze 7</title>
+    </head>
+    <body>  
+        <form onsubmit="return validateAll();">
+            <label>Name </label> <br>
+             <input type ="text" name="username" id="username"><br>
+             <label>Email</label><br>
+             <input type="email" name="email" id="email"placeholder="sample@example.com"><br>
+              <label>Gender</label><br>
+             <input type="radio" name="gender" id="male">Male<br>
+            <input type="radio" name="gender" id="female">Female<br>
+            <input type="radio" name="gender" id="other">Other<br>
+            <label>Date Of Birth </label> <br>
+            <input type="date" name="dob" id="dob"><br>
+            <label>Degree </label> <br>
+            <input type ="checkbox" name="degree" id="ssc" value="ssc">SSC<br>
+            <input type ="checkbox" name="degree" id="hsc" value="hsc">HSC<br>
+            <input type ="checkbox" name="degree" id="bsc"value="bsc">BSC<br>
+             <label>Blood Group</label> <br>
+             <select name="bloodgroup" id ="bloodgroup">
+            <option value="A+">A+</option>
+            <option value="A-" >A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select><br>
+        <label>Picture</label>
+            <input type="file" name="picture" id="picture"><br>
+            <input type="Submit"value="submit">  
+
+        </form>
+        <script>    
+            function validateAll()
+            {
+                  let username=document.getElementById("username").value.trim();
+                if (username=="")
+            {
+                alert("Name Cannot Be Empty");
+                return false;
+            }
+            let firstchar=username[0].toLowerCase();
+            if(firstchar< 'a' || firstchar > 'z')
+            {
+                alert("Name must start with a-z")
+                return false;
+            }
+             let email=document.getElementById("email").value.trim();
+                if(email=="")
+            {
+                alert("Email Cannot be Empty");
+                return false;
+            }
+            if (!email.includes('@') || !email.includes('.'))
+            {
+                alert("Wrong Email");
+                return false;
+            }
+            
+               let male=document.getElementById("male").checked;
+               let female=document.getElementById("female").checked;
+               let other=document.getElementById("other").checked;
+
+                if(!male && !female && !other)
+            {
+                alert("Please Select a gender");
+                return false;
+            }
+              let dob=document.getElementById("dob").value.trim();
+            if(dob == "")
+        {
+            alert("Date of Birth Is Empty");
+            return false;
+        }
+        let today = new Date();
+        let birthDate=new Date(dob);
+        if(birthDate>=today)
+        {
+            alert("Invalid Date OF Birth")
+            return false;
+        }
+        let ssc=document.getElementById("ssc").checked;
+                let hsc=document.getElementById("hsc").checked;
+                let bsc=document.getElementById("bsc").checked;
+                if( !ssc && !hsc && !bsc)
+                {
+                    alert("Please Select a Degree");
+                    return false;
+                } 
+        let blood =document.getElementById("bloodgroup").value.trim ();
+            
+            if( blood=="")
+            {
+                alert("Select a Blood Group");
+                return false;
+            } 
+         let picture=document.getElementById("picture");
+                if(picture.files.length==0)
+            {
+                alert("Picture cannot be empty");
+                return false;
+            }
+            else
+            {
+                alert=(" All Valid");
+                return true;
+            } 
+        }           
+        </script>
+    </body>
+</html>

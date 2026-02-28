@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title>JS LAb Task 3 Paze 5</title>
+    </head>
+    <body>
+        <form onsubmit="return validateDegree();"> 
+         <label>Degree </label> <br>
+        <input type ="checkbox" name="degree" id="ssc" value="ssc">SSC<br>
+        <input type ="checkbox" name="degree" id="hsc" value="hsc">HSC<br>
+        <input type ="checkbox" name="degree" id="bsc"value="bsc">BSC<br>
+        <input type="submit" value="submit">
+        </form>
+        <script>    
+            function validateDegree()
+            {
+                let ssc=document.getElementById("ssc").checked;
+                let hsc=document.getElementById("hsc").checked;
+                let bsc=document.getElementById("bsc").checked;
+                if( !ssc && !hsc && !bsc)
+                {
+                    alert("Please Select a Degree");
+                    return false;
+                } 
+                else
+                {
+                    alert("Valid Degree Selection");
+                    return true;
+                }
+
+            }
+        </script>
+       
+    </body>
+</html>

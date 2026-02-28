@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title> Js lab Task Paze 1</title>
+    </head>
+    <body>  
+        <form onsubmit="return validateName();">
+        <label>Name </label> <br>
+        <input type ="text" name="username" id="username"><br>
+        <input type="submit" value="submit">    
+        </form>
+        <script>    
+            function validateName()
+            {
+                let username=document.getElementById("username").value.trim();
+                if (username=="")
+            {
+                alert("Name Cannot Be Empty");
+                return false;
+            }
+            let firstchar=username[0].toLowerCase();
+            if(firstchar< 'a' || firstchar > 'z')
+            {
+                alert("Name must start with a-z")
+                return false;
+            }
+            else
+            {
+                alert("Hello" +   username);
+                return true;
+            }
+            }
+        </script>
+    </body>
+</html>

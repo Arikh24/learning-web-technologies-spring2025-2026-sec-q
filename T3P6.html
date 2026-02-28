@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title>JS LAb Task 3 Paze 6</title>
+    </head>
+    <body>
+        <form onsubmit="return validateBloodgroup();"> 
+         <label>Blood Group</label> <br>
+        <select name="bloodgroup" id ="bloodgroup">
+            <option value="A+">A+</option>
+            <option value="A-" >A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select><br>
+        <input type="submit" value="submit">
+        </form>
+        <script>    
+           function validateBloodgroup()
+           {
+             let blood =document.getElementById("bloodgroup").value.trim ();
+            
+            if( blood=="")
+            {
+                alert("Select a Blood Group");
+                return false;
+            } 
+            else 
+            {
+                alert("valid Blood Group");
+                return true;
+            }
+           }
+        </script>
+       
+    </body>
+</html>

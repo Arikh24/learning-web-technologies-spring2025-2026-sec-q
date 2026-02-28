@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title>JS LAb Task 3 Paze 3</title>
+    </head>
+    <body>  
+        <form onsubmit="return validateGender();">  
+            <label>Gender</label><br>
+            <input type="radio" name="gender" id="male">Male<br>
+            <input type="radio" name="gender" id="female">Female<br>
+            <input type="radio" name="gender" id="other">Other<br>
+            <input type="submit"value="submit">
+        </form>
+        <script>    
+            function validateGender()
+            {
+               let male=document.getElementById("male").checked;
+               let female=document.getElementById("female").checked;
+               let other=document.getElementById("other").checked;
+
+                if(!male && !female && !other)
+            {
+                alert("Please Select a gender");
+                return false;
+            }
+            else
+            {
+                alert("Valid Gender");
+                return true;
+            }
+            }
+        </script>
+    </body>
+</html>

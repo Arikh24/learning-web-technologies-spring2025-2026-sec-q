@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title> JS LAb Task 3 Paze 7</title>
+    </head>
+    <body>  
+        <form onsubmit="return validateProfile();">  
+            <label>User Id</label><br>
+            <input type="text" name="userid" id="userid"><br>
+            <label>Picture</label>
+            <input type="file" name="picture" id="picture"><br>
+            <input type="Submit"value="submit">
+        </form>
+        <script>    
+            function validateProfile()
+            {   
+                let userid=document.getElementById("userid").value.trim();
+                if(userid=="")
+            {
+                alert("Empty user ID");
+                return false;
+            }
+            else if (userid <=0)
+            {
+                alert("UserID Cannot be negative or zero");
+                return false;
+            }
+             let picture=document.getElementById("picture");
+                if(picture.files.length==0)
+            {
+                alert("Picture cannot be empty");
+                return false;
+            }
+            else
+            {
+                alert("Valid Profile");
+                return true;
+            }
+            }
+
+        </script>
+    </body>
+</html>
