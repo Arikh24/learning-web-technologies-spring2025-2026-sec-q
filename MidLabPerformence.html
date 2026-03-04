@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Create CalCulator</title>
+    </head>
+    <body>
+        <h1> Calculator</h1>  
+        <input type="number" id="num1" placeholder="Input Fast Number"><br>
+        <input type="number" id="num2" placeholder="Input Secont Number"><br>
+        <button onclick="calculate('+')">Addition</button>
+        <button onclick="calculate('-')">Subtraction</button>
+        <button onclick="calculate('*')">Multipication</button>
+        <button onclick="calculate('/')">Division</button>
+        <script>    
+            function calculate(operator)
+            {
+                let num1 = Number(document.getElementById("num1").value);
+                let num2 = Number(document.getElementById("num2").value);
+                if(operator ==="+")
+            {
+                alert(num1+num2);
+            }
+            else if(operator ==="-")
+            {
+                alert(num1-num2);
+            }
+             else if(operator ==="*")
+            {
+              alert(num1*num2);
+            }
+            else if(operator ==="/")
+            {
+               alert( num1/num2);
+            }
+            else
+            {
+                alert("Invalid Operator");
+            }
+            }
+        </script>
+
+    </body>
+</html>
