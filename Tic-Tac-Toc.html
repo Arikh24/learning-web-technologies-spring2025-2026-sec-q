@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title> Tic-Tac-Toc </title>
+        <style> 
+            body 
+            {
+                text-align:center;font-size: 30px;
+            }
+            table
+            {
+                margin:auto;
+            }
+            td
+            {
+                width: 100px;height: 100px;border: 2px solid black;font-size:  50px;
+            }
+            td:hover
+            {
+                background: yellow;
+            }
+            #status
+            {
+                color:red;font-size: 25px;
+            }
+            button
+            {
+                font-size: 20px;padding: 10px;
+            }
+        </style>
+    </head>
+    <body>  
+        <h1>Tic-Tac-Toc</h1>
+        <p id="status">X turn Click boxes.</p>
+        <table id="board">
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+        </table>
+        <br>
+        <button onclick="clearBoard()">New Game</button>
+        <script>
+            let player="X";
+            let boxes=["","","","","","","","",""];
+            function clickBox(event)
+            {
+                let box=event.target;
+                let num=box.cellIndex+(box.parentNode.rowIndex*3);
+                if(boxes[num] != "")
+            {
+                return;
+            }
+            boxes[num]=player;
+            box.innerHTML=player;
+            if(winGame())
+            {
+                document.getElementById("status").innerHTML=player+"Wins";
+                return;
+            }
+            if(boxesFull())
+            {
+                document.getElementById("status").innerHTML="Draw";
+                return;
+            }
+            player=(player=="X") ? "O" : "X";
+            document.getElementById("status").innerHTML=player+"turn";
+            }
+           function winGame() 
+           {
+             const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+             return wins.some(w => boxes[w[0]] == player && boxes[w[1]] == player && boxes[w[2]] == player);
+           }
+           function boxesFull()
+           {
+            for (let b of boxes) if (b == "") return false;
+            return true;
+           }
+           function clearBoard()
+           {
+             boxes = ["","","","","","","","",""];
+             player = "X";
+             document.getElementById("status").innerHTML = "X turn!";
+             let tds = document.getElementsByTagName("td");
+             for (let td of tds) td.innerHTML = "";
+           }
+           let allBoxes=document.getElementsByTagName("td");
+           for (let box of allBoxes)
+           {
+            box.onclick=clickBox;
+           }
+
+        </script>
+    </body>
+</html>
