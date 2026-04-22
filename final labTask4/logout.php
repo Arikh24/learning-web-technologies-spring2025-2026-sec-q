@@ -1,8 +1,9 @@
 <?php
     require_once '../config.php';
 
-    $_SESSION['admin_logged_in'] = false;
-    unset($_SESSION['admin_id']);
+    $_SESSION['customer_logged_in'] = false;
+    unset($_SESSION['customer_name']);
+    unset($_SESSION['customer_email']);
 
     header("Location: login.html");
     exit();
