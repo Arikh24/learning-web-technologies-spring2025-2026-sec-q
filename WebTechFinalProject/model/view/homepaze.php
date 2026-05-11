@@ -7,7 +7,6 @@
         *{
             margin:0;
             padding:0;
-            box-sizing:border-box;
             font-family: Arial, sans-serif;
         }
 
@@ -23,7 +22,7 @@
             position:absolute;
             width:100%;
             height:100%;
-            background:rgba(0,0,0,0.6);
+            background:rgba(49, 49, 49, 0.6);
         }
 
         .container{
@@ -63,15 +62,15 @@
         }
 
         .admin{
-            background:#dc2626;
+            background:red;
         }
 
         .user{
-            background:#2563eb;
+            background:green;
         }
 
         .signup{
-            background:#16a34a;
+            background:blue;
         }
      
         .footer{
